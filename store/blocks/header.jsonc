@@ -14,24 +14,88 @@
     "props": {
       "blockClass": "sticky-header"
     },
-    "children": ["flex-layout.row#desktop"]
+    "children": [
+      "flex-layout.row#desktop1",
+      "header-border",
+      "flex-layout.row#desktop2",
+      "flex-layout.row#desktop3"
+      
+    ]
   },
-  "flex-layout.row#desktop": {
+  "flex-layout.row#desktop1": {
+    "children":["rich-text#top"],
+    "props": {
+      "blockClass": "toprow"
+    }
+  },
+  "rich-text#top": { 
+    "props": { 
+      "text": "Operações restritas nos estados de Santa Catarina e Rio Grande do Sul [saiba mais](https://www.example.com)",
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "textColor": "danger",
+      "blockClass": "topbar-text"
+    }
+  },
+  "flex-layout.row#desktop2": {
     "props": {
       "horizontalAlign": "center",
       "verticalAlign": "center",
       "preventHorizontalStretch": true,
       "preventVerticalStretch": true,
-      "fullWidth": true
+      "fullWidth": true,
+      "blockClass": "blueHeader"
     },
     "children": [
       "flex-layout.col#logo-desktop",
-      "flex-layout.col#spacer",
-      "search-bar",
       "locale-switcher",
+      "search-bar",
+      "vtex.menu@2.x:menu#websites",
       "login",
       "minicart.v2"
     ]
+  },
+  "search-bar": {
+    "props": {
+      "blockClass": "maxSearch",
+      "placeholder": "O que você procura?"
+    }
+  },
+  "login": {
+    "props": {
+      "showIconProfile": true
+    }
+  },
+  "vtex.menu@2.x:menu#websites": {
+    "children": ["menu-item#atendimento"]
+  },
+  "menu-item#atendimento": {
+    "props": {
+      "id": "menu-item-atendimento",
+      "type": "custom",
+      "highlight": true,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": false,
+        "tagTitle": "Atendimento",
+        "text": "Atendimento",
+        "activeClassName": "rebel-pink"
+      }
+  }},
+  "flex-layout.row#desktop3": {
+    "children": [
+      "category-menu"
+    ]
+  },
+  "category-menu": {
+    "props": {
+      "showAllDepartments": false,
+      "showSubcategories": false,
+      "menuDisposition": "center",
+      "departments": [],
+      "sortSubcategories": "name"
+    }
   },
   "flex-layout.col#spacer": {
     "props": {
@@ -48,8 +112,8 @@
     "props": {
       "title": "Logo",
       "href": "/",
-      "url": "https://brand.vtex.com/static/media/VTEX_pink_RGB.751a9fb5.svg",
-      "width": "80"
+      "url": "https://i.pinimg.com/originals/cb/20/45/cb2045efc29d7aca6352418d386e2a72.png",
+      "width": "150"
     }
   },
   "header-layout.mobile": {

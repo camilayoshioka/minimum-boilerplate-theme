@@ -1,0 +1,17 @@
+.container {
+    background-color: #011E41;
+}
+
+.searchBarInnerContainer--maxSearch {
+    width: 760px;
+    height: 60px;
+}
+
+.menu-2-x-menuContainerNav {
+    color: white;
+}
+
+.styledLinkContent {
+    color: white;
+}
+

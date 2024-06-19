@@ -1,15 +1,131 @@
 {
   "store.home": { 
     "blocks": [
-      "rich-text"
+      "slider-layout#banner",
+      "rich-text#nossosprodutos",
+      "flex-layout.row#imagem"
     ]
   },
-  "rich-text": { 
+  "slider-layout#banner": {
+    "children": [
+      "info-card#n1",
+      "info-card#n2"
+    ],
+    "props": {
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": false
+      },
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel"
+    }
+  },
+  "info-card#n1": {
+    "props": {
+      "isFullModeStyle": false,
+      "textPosition": "right",
+      "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-rosa-min.png",
+      "headline": "Vintage Pink",
+      "subhead": "Give your kitchen a boho style adding vintage apparels.<br>Available until January 2020.",
+      "callToActionMode": "button",
+      "callToActionText": "Explore",
+      "callToActionUrl": "/sale/d",
+      "textAlignment": "center"
+    }
+  },
+  "info-card#n2": {
+    "props": {
+      "isFullModeStyle": false,
+      "textPosition": "right",
+      "imageUrl": "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/featured-image-kitchen-layouts.jpg",
+      "headline": "Vintage Pink",
+      "subhead": "Give your kitchen a boho style adding vintage apparels.<br>Available until January 2020.",
+      "callToActionMode": "button",
+      "callToActionText": "Explore",
+      "callToActionUrl": "/sale/d",
+      "textAlignment": "center"
+    }
+  },
+  "flex-layout.col#nossosprodutos": {
+    "children": [
+      "flex-layout.row#texto",
+      "flex-layout.row#imagem"
+    ]
+  },
+  "flex-layout.row#texto": {
+    "children": ["rich-text#nossosprodutos"]
+  },
+  "rich-text#nossosprodutos": {
     "props": { 
-      "text": "VTEX Store Framework",
+      "text": "NOSSOS PRODUTOS",
       "textAlignment": "CENTER",
       "textPosition": "CENTER",
-      "font": "t-heading-1"
+      "font": "t-heading-3"
+    }
+  },
+  "flex-layout.row#imagem": {
+    "children": [
+      "image#geladeira1",
+      "image#geladeira2",
+      "image#geladeira3",
+      "image#geladeira4",
+      "image#geladeira5",
+      "image#geladeira6",
+      "image#geladeira7",
+      "image#geladeira8"
+    ]
+  },
+  "image#geladeira1": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
+    }
+  },
+  "image#geladeira2": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
+    }
+  },
+  "image#geladeira3": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
+    }
+  },
+  "image#geladeira4": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
+    }
+  },
+  "image#geladeira5": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
+    }
+  },
+  "image#geladeira6": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
+    }
+  },
+  "image#geladeira7": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
+    }
+  },
+  "image#geladeira8": {
+    "props": {
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTgfJHbxHqiHMGZAyYIW9lIGbuf1uSh_OSGg&s",
+      "width": "100px"
     }
   }
 }

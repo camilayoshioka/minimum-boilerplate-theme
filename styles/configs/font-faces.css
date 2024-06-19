@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Comic-Neue';
+    src: url('/assets/fonts/ComicNeue-Regular.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: block;
+  }
+
+  /*@font-face {
+    font-family: 'Fabriga';
+    src: url('//io.vtex.com.br/fonts/fabriga/Fabriga-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+  }*/
