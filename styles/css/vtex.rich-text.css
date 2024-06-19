@@ -1,14 +1,9 @@
-.paragraph--topbar-text {
-    color: white;
-    font-size: 12px;
-    font-family: 'Fabriga';
-}
-
+.paragraph--topbar-text,
 .link--topbar-text {
     color: white;
     font-size: 12px;
-    font-family: 'Fabriga';
-    font-weight: 300;
+    font-family: 'Comic Neue';
+    font-weight: 400;
 }
 
 
