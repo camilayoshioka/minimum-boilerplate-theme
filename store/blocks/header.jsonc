@@ -58,7 +58,9 @@
   "search-bar": {
     "props": {
       "blockClass": "maxSearch",
-      "placeholder": "O que você procura?"
+      "placeholder": "O que você procura?",
+      "hasIconLeft": true,
+      "autocompleteAlignment": "center"
     }
   },
   "login": {
@@ -66,37 +68,117 @@
       "showIconProfile": true
     }
   },
-  "vtex.menu@2.x:menu#websites": {
-    "children": ["menu-item#atendimento"]
-  },
-  "menu-item#atendimento": {
-    "props": {
-      "id": "menu-item-atendimento",
-      "type": "custom",
-      "highlight": true,
-      "itemProps": {
-        "type": "internal",
-        "href": "#",
-        "noFollow": false,
-        "tagTitle": "Atendimento",
-        "text": "Atendimento",
-        "activeClassName": "rebel-pink"
-      }
-  }},
+"vtex.menu@2.x:menu#websites": {
+  "children": [
+    "menu-item#atendimento"
+  ],
+  "props": {
+    "blockClass": "atendimento"
+  }
+},
+"menu-item#atendimento": {
+  "props": {
+    "id": "menu-item-atendimento",
+    "type": "custom",
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "#",
+      "noFollow": false,
+      "tagTitle": "Atendimento",
+      "text": "Atendimento",
+      "blockClass": "atendimento"
+    },
+    "iconProps": {
+      "id": "menu-arrow-down",
+      "size": 16,
+      "viewBox": "0 0 16 16",
+      "activeClassName": "rebel-pink",
+      "mutedClassName": "c-action-primary"
+    },
+    "iconToTheRight": true
+  }
+},
   "flex-layout.row#desktop3": {
     "children": [
-      "category-menu"
+      "vtex.menu@2.x:menu#loja"
     ]
   },
-  "category-menu": {
-    "props": {
-      "showAllDepartments": false,
-      "showSubcategories": false,
-      "menuDisposition": "center",
-      "departments": [],
-      "sortSubcategories": "name"
-    }
-  },
+  "vtex.menu@2.x:menu#loja": {
+  "props": {
+    "items": [
+      {
+        "id": "menu-item-categorias",
+        "type": "custom",
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "#",
+          "noFollow": false,
+          "tagTitle": "Categorias",
+          "text": "Categorias"
+        },
+        "iconProps": {
+          "id": "hpa-hamburguer-menu",
+          "size": 16,
+          "viewBox": "0 0 16 16",
+          "activeClassName": "rebel-pink",
+          "mutedClassName": "c-action-primary"
+        },
+        "iconToTheRight": true
+      },
+      {
+        "id": "menu-item-eletro",
+        "type": "custom",
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "/about-us",
+          "noFollow": false,
+          "tagTitle": "eletro",
+          "text": "Eletrodomésticos"
+        }
+      },
+      {
+        "id": "menu-item-eletroportateis",
+        "type": "custom",
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "/about-us",
+          "noFollow": false,
+          "tagTitle": "eletroportateis",
+          "text": "Eletroportáteis"
+        }
+      },
+      {
+        "id": "menu-item-utilidades",
+        "type": "custom",
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "/about-us",
+          "noFollow": false,
+          "tagTitle": "utilidades",
+          "text": "Utilidades domésticas"
+        }
+      },
+      {
+        "id": "menu-item-pecas",
+        "type": "custom",
+        "highlight": false,
+        "itemProps": {
+          "type": "internal",
+          "href": "/about-us",
+          "noFollow": false,
+          "tagTitle": "pecas",
+          "text": "Peças e Acessórios"
+        }
+      }
+    ]
+  }
+},
+
   "flex-layout.col#spacer": {
     "props": {
       "width": "grow"

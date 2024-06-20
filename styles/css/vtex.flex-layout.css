@@ -1,4 +1,11 @@
+.flexRow--toprow {
+    height: 49px;
+    background-color: #011E41;
+}
+
 .flexRow--blueHeader {
+    height: 92px;
+    align-content: center;
     background-color: #011E41;
 }
 
