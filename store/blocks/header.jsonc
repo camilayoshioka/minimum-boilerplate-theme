@@ -1,9 +1,15 @@
 {
   "header": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+    "blocks": [
+      "header-layout.desktop",
+      "header-layout.mobile"
+    ]
   },
   "header.full": {
-    "blocks": ["header-layout.desktop", "header-layout.mobile"]
+    "blocks": [
+      "header-layout.desktop",
+      "header-layout.mobile"
+    ]
   },
   "header-layout.desktop": {
     "children": [
@@ -19,17 +25,18 @@
       "header-border",
       "flex-layout.row#desktop2",
       "flex-layout.row#desktop3"
-      
     ]
   },
   "flex-layout.row#desktop1": {
-    "children":["rich-text#top"],
+    "children": [
+      "rich-text#top"
+    ],
     "props": {
       "blockClass": "toprow"
     }
   },
-  "rich-text#top": { 
-    "props": { 
+  "rich-text#top": {
+    "props": {
       "text": "Operações restritas nos estados de Santa Catarina e Rio Grande do Sul [saiba mais](https://www.example.com)",
       "textAlignment": "CENTER",
       "textPosition": "CENTER",
@@ -50,7 +57,7 @@
       "flex-layout.col#logo-desktop",
       "locale-switcher",
       "search-bar",
-      "vtex.menu@2.x:menu#websites",
+      "vtex.menu@2.x:menu#category-menu",
       "login",
       "minicart.v2"
     ]
@@ -60,7 +67,9 @@
       "blockClass": "maxSearch",
       "placeholder": "O que você procura?",
       "hasIconLeft": true,
-      "autocompleteAlignment": "center"
+      "autocompleteAlignment": "center",
+      "autocompleteFullWidth": true,
+      "maxWidth": "760px"
     }
   },
   "login": {
@@ -68,46 +77,166 @@
       "showIconProfile": true
     }
   },
-"vtex.menu@2.x:menu#websites": {
-  "children": [
-    "menu-item#atendimento"
-  ],
-  "props": {
-    "blockClass": "atendimento"
-  }
-},
-"menu-item#atendimento": {
-  "props": {
-    "id": "menu-item-atendimento",
-    "type": "custom",
-    "highlight": false,
-    "itemProps": {
-      "type": "internal",
-      "href": "#",
-      "noFollow": false,
-      "tagTitle": "Atendimento",
-      "text": "Atendimento",
-      "blockClass": "atendimento"
+  "vtex.menu@2.x:menu#category-menu": {
+    "children": ["menu-item#categories"]
+  },
+  "menu-item#categories": {
+    "props": {
+      "id": "menu-item-custom-categories",
+      "type": "custom",
+      "iconId": null,
+      "blockClass":"menuAtendimento",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "Atendimento",
+        "text": "Atendimento"
+      }
     },
-    "iconProps": {
-      "id": "menu-arrow-down",
-      "size": 16,
-      "viewBox": "0 0 16 16",
-      "activeClassName": "rebel-pink",
-      "mutedClassName": "c-action-primary"
-    },
-    "iconToTheRight": true
-  }
-},
+    "blocks": ["vtex.menu@2.x:submenu#categories"]
+  },
+  "vtex.menu@2.x:submenu#categories": {
+    "children": ["rich-text#compras", "vtex.menu@2.x:menu#categories-consulta", "rich-text#cuida", "vtex.menu@2.x:menu#categories-cuida"]
+  },
+  "rich-text#compras": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Compras na Loja Eletrolux",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "compras"
+  }},
+  "vtex.menu@2.x:menu#categories-consulta": {
+    "props": {
+      "blockClass":"submenuAtendimento",
+      "items": [
+        {
+          "id": "menu-item-category-consulta",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "consulta",
+            "text": "Consultar ou cancelar um pedido"
+          }
+        },
+        {
+          "id": "menu-item-category-trocar",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "trocar",
+            "text": "Trocar ou devolver"
+          }
+        }
+      ]
+    }
+  },
+  "rich-text#cuida": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Electrolux Cuida",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "cuida"
+  }},
+  "vtex.menu@2.x:menu#categories-cuida": {
+    "props": {
+      "blockClass":"submenuAtendimento",
+      "items": [
+        {
+          "id": "menu-item-category-consulta",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "consulta",
+            "text": "Consultar ou cancelar um pedido"
+          }
+        },
+        {
+          "id": "menu-item-category-solicitar",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "solicitar",
+            "text": "Solicitar assitência técnica"
+          }
+        },
+        {
+          "id": "menu-item-category-guias",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "guias",
+            "text": "Guias e manuais"
+          }
+        },
+        {
+          "id": "menu-item-category-duvidas",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "duvidas",
+            "text": "Dúvidas Frequentes"
+          }
+        },
+        {
+          "id": "menu-item-category-fale",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "fale",
+            "text": "Fale Conosco"
+          }
+        }
+        ]}},
   "flex-layout.row#desktop3": {
     "children": [
       "vtex.menu@2.x:menu#loja"
     ]
   },
   "vtex.menu@2.x:menu#loja": {
-  "props": {
-    "items": [
-      {
+    "children": [
+      "menu-item#categorias", 
+      "menu-item#eletrodomesticos",
+      "menu-item#eletro",
+      "menu-item#utilidades",
+      "menu-item#pecas"
+    ]},  
+  "menu-item#categorias": {
+    "blocks": ["vtex.menu@2.x:submenu#categorias"],
+    "props": { 
         "id": "menu-item-categorias",
         "type": "custom",
         "highlight": false,
@@ -122,63 +251,390 @@
           "id": "hpa-hamburguer-menu",
           "size": 16,
           "viewBox": "0 0 16 16",
-          "activeClassName": "rebel-pink",
+          "activeClassName": "navy-blue",
           "mutedClassName": "c-action-primary"
         },
         "iconToTheRight": true
-      },
-      {
-        "id": "menu-item-eletro",
-        "type": "custom",
-        "highlight": false,
-        "itemProps": {
-          "type": "internal",
-          "href": "/about-us",
-          "noFollow": false,
-          "tagTitle": "eletro",
-          "text": "Eletrodomésticos"
-        }
-      },
-      {
-        "id": "menu-item-eletroportateis",
-        "type": "custom",
-        "highlight": false,
-        "itemProps": {
-          "type": "internal",
-          "href": "/about-us",
-          "noFollow": false,
-          "tagTitle": "eletroportateis",
-          "text": "Eletroportáteis"
-        }
-      },
-      {
-        "id": "menu-item-utilidades",
-        "type": "custom",
-        "highlight": false,
-        "itemProps": {
-          "type": "internal",
-          "href": "/about-us",
-          "noFollow": false,
-          "tagTitle": "utilidades",
-          "text": "Utilidades domésticas"
-        }
-      },
-      {
-        "id": "menu-item-pecas",
-        "type": "custom",
-        "highlight": false,
-        "itemProps": {
-          "type": "internal",
-          "href": "/about-us",
-          "noFollow": false,
-          "tagTitle": "pecas",
-          "text": "Peças e Acessórios"
-        }
+      }},
+  "menu-item#eletrodomesticos": {
+    "props": {
+      "id": "menu-item-eletro",
+    "type": "custom",
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "/about-us",
+      "noFollow": false,
+      "tagTitle": "eletro",
+      "text": "Eletrodomésticos"
+    }
+    }
+  },
+  "menu-item#eletro": {
+    "props": {
+      "id": "menu-item-eletroportateis",
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/about-us",
+        "noFollow": false,
+        "tagTitle": "eletroportateis",
+        "text": "Eletroportáteis"
       }
+    }
+  },
+  "menu-item#utilidades": {
+    "props": {
+      "id": "menu-item#utilidades",
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "/about-us",
+        "noFollow": false,
+        "tagTitle": "utilidades",
+        "text": "Utilidades domésticas"
+      }
+    }
+  },
+  "menu-item#pecas": {
+    "props": {
+      "id": "menu-item#pecas",
+      "type": "custom",
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": false,
+        "tagTitle": "pecas",
+        "text": "Peças e Acessórios"
+      }
+    }
+  },
+  "vtex.menu@2.x:submenu#categorias": {
+    "children": [
+      "rich-text#todas",
+      "vtex.menu@2.x:menu#todas"            
     ]
+  },
+  "rich-text#todas": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Todas as Categorias",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "todas"
   }
-},
-
+  },
+  "vtex.menu@2.x:menu#todas": {
+    "children": [
+      "menu-item#sub-eletrodomesticos",
+      "menu-item#sub-eletroportateis",
+      "menu-item#sub-utilidades",
+      "menu-item#sub-pecas",
+      "menu-item#servicos"      
+    ],
+    "props": {
+      "blockClass":"submenuCategorias"
+    }
+  },
+  "menu-item#sub-eletrodomesticos": {
+    "blocks": ["vtex.menu@2.x:submenu#eletrodomesticos"],
+    "props": {
+      "id": "menu-item-eletrodomesticos",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "eletrodomesticos",
+        "text": "Eletrodomésticos"
+    }}},
+"menu-item#sub-eletroportateis": {
+  "blocks": ["vtex.menu@2.x:submenu#eletroportateis"],
+  "props": {
+    "id": "menu-item-eletroportateis",
+    "type": "custom",
+    "iconId": null,
+    "highlight": false,
+    "itemProps": {
+      "type": "internal",
+      "href": "#",
+      "noFollow": true,
+      "tagTitle": "eletro",
+      "text": "Eletroportáteis"
+  }}},  
+  "menu-item#sub-utilidades": {
+    "blocks": ["vtex.menu@2.x:submenu#utilidades"],
+    "props": {
+      "id": "menu-item-utilidades",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "utilidades",
+        "text": "Utilidades domésticas"
+    }}}, 
+  "menu-item#sub-pecas": {
+    "blocks": ["vtex.menu@2.x:submenu#pecas"],
+    "props": {
+      "id": "menu-item-pecas",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "pecas",
+        "text": "Peças e Acessórios"
+    }}},
+  "menu-item#servicos": {
+    "blocks": ["vtex.menu@2.x:submenu#servicos"],
+    "props": {
+      "id": "menu-item-servicos",
+      "type": "custom",
+      "iconId": null,
+      "highlight": false,
+      "itemProps": {
+        "type": "internal",
+        "href": "#",
+        "noFollow": true,
+        "tagTitle": "servicos",
+        "text": "Serviços Electrolux"
+    }}},
+  "vtex.menu@2.x:submenu#eletrodomesticos": {
+    "children": [
+      "rich-text#bar",
+      "vtex.menu@2.x:menu#eletrodomesticos"
+    ]
+  },
+  "rich-text#bar": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Bar e Adega",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "bar"
+  }
+  },
+  "vtex.menu@2.x:menu#eletrodomesticos": {
+    "props": {
+      "items": [
+        {
+          "id": "menu-item-adega",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "adega",
+            "text": "Adega"
+          }},
+          {
+            "id": "menu-item-cervejeira",
+            "type": "custom",
+            "iconId": null,
+            "highlight": false,
+            "itemProps": {
+              "type": "internal",
+              "href": "#",
+              "noFollow": true,
+              "tagTitle": "cervejeira",
+              "text": "Cervejeira"
+            }}
+          ]
+  }},
+  "vtex.menu@2.x:submenu#eletroportateis": {
+    "children": [
+      "rich-text#aspirador",
+      "vtex.menu@2.x:menu#eletroportateis"
+    ]
+  },
+  "rich-text#aspirador": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Aspirador de pó",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "aspirador"
+  }
+  },
+  "vtex.menu@2.x:menu#eletroportateis": {
+    "props": {
+      "items": [
+        {
+          "id": "menu-item-aspirador",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "aspirador",
+            "text": "Robô aspirador de "
+          }},
+          {
+            "id": "menu-item-aspirador-vertical",
+            "type": "custom",
+            "iconId": null,
+            "highlight": false,
+            "itemProps": {
+              "type": "internal",
+              "href": "#",
+              "noFollow": true,
+              "tagTitle": "Aspirador de pó vertical",
+              "text": "Aspirador de pó vertical"
+            }}
+          ]
+  }},
+  "vtex.menu@2.x:submenu#utilidades": {
+    "children": [
+      "rich-text#panela",
+      "vtex.menu@2.x:menu#utilidades"
+    ]
+  },
+  "rich-text#panela": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Jogo de panelas",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "panelas"
+  }
+  },
+  "vtex.menu@2.x:menu#utilidades": {
+    "props": {
+      "items": [
+        {
+          "id": "menu-item-panelas",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "panelas",
+            "text": "Jogo de panelas"
+          }},
+          {
+            "id": "menu-item-panelas-inox",
+            "type": "custom",
+            "iconId": null,
+            "highlight": false,
+            "itemProps": {
+              "type": "internal",
+              "href": "#",
+              "noFollow": true,
+              "tagTitle": "Panelas inox",
+              "text": "Panelas inox"
+            }}
+          ]
+  }},
+  "vtex.menu@2.x:submenu#pecas": {
+    "children": [
+      "rich-text#cozinha",
+      "vtex.menu@2.x:menu#pecas"
+    ]
+  },
+  "rich-text#cozinha": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Cozinha",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "cozinha"
+  }
+  },
+  "vtex.menu@2.x:menu#pecas": {
+    "props": {
+      "items": [
+        {
+          "id": "menu-item-pecas-coifa",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "coifa",
+            "text": "Peças para coifa"
+          }},
+          {
+            "id": "menu-item-pecas-geladeira",
+            "type": "custom",
+            "iconId": null,
+            "highlight": false,
+            "itemProps": {
+              "type": "internal",
+              "href": "#",
+              "noFollow": true,
+              "tagTitle": "Pecas geladeira",
+              "text": "Peças para geladeira"
+            }}
+          ]
+  }},
+  "vtex.menu@2.x:submenu#servicos": {
+    "children": [
+      "rich-text#servicos",
+      "vtex.menu@2.x:menu#servicos"
+    ]
+  },
+  "rich-text#servicos": {
+    "props": {
+      "textAlignment": "CENTER",
+      "textPosition": "CENTER",
+      "text": "Garantia estendida",
+      "textColor": "c-on-emphasis",
+      "font": "t-heading-5",
+      "blockClass": "garantia"
+  }
+  },
+  "vtex.menu@2.x:menu#servicos": {
+    "props": {
+      "items": [
+        {
+          "id": "menu-item-garantia",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": true,
+            "tagTitle": "protegido",
+            "text": "Mantenha o seu eletrodoméstico protegido por muito mais tempo após a garantia de fábrica"
+          }},
+          {
+            "id": "menu-item-servico",
+            "type": "custom",
+            "iconId": null,
+            "highlight": false,
+            "itemProps": {
+              "type": "internal",
+              "href": "#",
+              "noFollow": true,
+              "tagTitle": "compras programadas",
+              "text": "Deixe suas compras programadas para a reposição de acessórios e ainda ganhe 10% off"
+            }}
+          ]
+  }},
   "flex-layout.col#spacer": {
     "props": {
       "width": "grow"
@@ -188,7 +644,9 @@
     "props": {
       "verticalAlign": "middle"
     },
-    "children": ["logo"]
+    "children": [
+      "logo"
+    ]
   },
   "logo": {
     "props": {
@@ -199,10 +657,14 @@
     }
   },
   "header-layout.mobile": {
-    "children": ["sticky-layout#mobile"]
+    "children": [
+      "sticky-layout#mobile"
+    ]
   },
   "sticky-layout#mobile": {
-    "children": ["flex-layout.row#mobile"]
+    "children": [
+      "flex-layout.row#mobile"
+    ]
   },
   "flex-layout.row#mobile": {
     "children": [

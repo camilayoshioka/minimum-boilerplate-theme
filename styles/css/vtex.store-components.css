@@ -1,11 +1,20 @@
 .searchBarInnerContainer--maxSearch {
-    height: 60px;
-}
-
-.searchBarContainer {
-    height: 60px;
     width: 760px;
 }
+
+
+.autoCompleteOuterContainer--maxSearch :global(.vtex-input-prefix__group) {
+   height: 60px;
+   box-sizing: content-box;
+}
+
+.suffixWrapper--maxSearch {
+    display: none;
+}
+
+
+
+
 
 
 

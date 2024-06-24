@@ -1,7 +1,26 @@
-.styledLinkContent {
+.styledLinkContent--menuCategorias {
     color: #041e50;
     font-family: 'Comic Neue';
 }
-.menuContainer--atendimento:last-child {
+
+.styledLinkContent--menuAtendimento {
     color: white;
+    font-family: 'Comic Neue';
 }
+
+.menuContainerNav {
+    align-content: center;
+}
+
+.menuContainer--submenuAtendimento, .submenu, .menuContainer--submenuCategorias {
+    flex-direction: column;
+}
+
+.menuItem--submenuAtendimento, .menuItem--submenuCategorias {
+    padding-bottom: 10px;
+    border-bottom: solid 1px #7a8a9c;
+    font-family: 'Comic Neue';
+}
+
+
+
